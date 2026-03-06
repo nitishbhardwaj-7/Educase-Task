@@ -16,7 +16,7 @@ const Home = () => {
   return (
     <div className="h-full flex flex-col justify-end bg-[#f7f8f9]  px-6 pb-12">
 
-      <h1 className="text-[26px] font-semibold text-[#1D2226] mb-1">
+      <h1 className="text-[28px] font-semibold text-[#1D2226] mb-1">
         Welcome to PopX
       </h1>
 
