@@ -15,7 +15,7 @@ const Profile = () => {
         <div className="flex items-start gap-4">
           <div className="relative">
             <img
-              src="https://randomuser.me/api/portraits/women/44.jpg"
+              src="https://unsplash.com/photos/a-person-holding-a-laptop-7mBictB_urk"
               alt="profile"
               className="w-16 h-16 rounded-full object-cover" />
             <div className="absolute bottom-0 text-white right-0 w-4 h-5 bg-purple-500 rounded-full flex items-center justify-center">
@@ -24,8 +24,8 @@ const Profile = () => {
           </div>
 
           <div className="mt-1">
-            <h2 className="text-[15px] font-medium text-gray-900">Marry Doe</h2>
-            <p className="text-[13px] text-gray-500">Marry@Gmail.Com</p>
+            <h2 className="text-[15px] font-medium text-gray-900">Andreus Rena</h2>
+            <p className="text-[13px] text-gray-500">Andreus@gmail.com</p>
           </div>
         </div>
 
