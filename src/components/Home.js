@@ -1,35 +1,42 @@
 import React from "react";
-import {useNavigate} from "react-router-dom" ;
- 
+import { useNavigate } from "react-router-dom";
+
 const Home = () => {
-  
+
   const navigate = useNavigate();
 
-  const handleSignUp = ()=> {
-    navigate("/signup")
-  }
+  const handleSignUp = () => {
+    navigate("/signup");
+  };
 
-  const handleLogin = ()=>{
-    navigate("/login")
-  }
+  const handleLogin = () => {
+    navigate("/login");
+  };
 
   return (
-    <div className="h-full flex bg-gray-100 flex-col justify-end px-6 pb-10">
-      <h1 className="text-2xl font-bold text-gray-800 mb-2">
+    <div className="h-full flex flex-col justify-end bg-[#f7f8f9]  px-6 pb-12">
+
+      <h1 className="text-[26px] font-semibold text-[#1D2226] mb-1">
         Welcome to PopX
       </h1>
 
-      <p className="text-gray-500 text-xl mb-8">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+      <p className="text-gray-500 text-[18px] leading-6 mb-8">
+        Lorem ipsum dolor sit amet,<br />
+        consectetur adipiscing elit,
       </p>
 
-      <button className="w-full bg-purple-700 text-white py-3 rounded-md font-medium mb-4 hover:bg-purple-700 transition" onClick={handleSignUp} >
+      <button
+        className="w-full h-[46px] bg-[#6C25FF] text-white rounded-[6px] text-[15px] font-medium mb-3"
+        onClick={handleSignUp} >
         Create Account
       </button>
 
-      <button className="w-full bg-gray-300 text-black-900 py-3 rounded-md font-medium hover:bg-purple-300 transition" onClick={handleLogin} >
+      <button
+        className="w-full h-[46px] bg-[#CEBAFB] text-[#1D2226] rounded-[6px] text-[15px] font-semibold"
+        onClick={handleLogin} >
         Already Registered? Login
       </button>
+
     </div>
   );
 };

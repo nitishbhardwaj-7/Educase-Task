@@ -1,5 +1,5 @@
 import { useNavigate, useLocation } from "react-router-dom";
-import home from "../assets/home.png";
+import { ChevronLeft, ChevronRight, House } from "lucide-react";
 
 const BottomPagination = () => {
     const navigate = useNavigate();
@@ -7,46 +7,36 @@ const BottomPagination = () => {
 
     const pages = ["/", "/login", "/signup", "/profile"];
     const totalPages = pages.length;
-
     const currentIndex = pages.indexOf(location.pathname);
     const currentPage = currentIndex + 1;
 
     const goPrev = () => {
-        if (currentIndex > 0) {
-            navigate(pages[currentIndex - 1]);
-        }
+        const prevIndex = currentIndex === 0 ? totalPages - 1 : currentIndex - 1;
+        navigate(pages[prevIndex]);
     };
 
     const goNext = () => {
-        if (currentIndex < totalPages - 1) {
-            navigate(pages[currentIndex + 1]);
-        }
+        const nextIndex = (currentIndex + 1) % totalPages;
+        navigate(pages[nextIndex]);
     };
 
     return (
-        <div className="absolute bottom-4 left-0 right-0 flex items-center justify-center gap-4 text-sm text-gray-600">
-
+        <div className="fixed bottom-0 left-0 w-full bg-[#fafafa] h-[60px] flex items-center justify-center gap-4 text-sm z-50">
             <button onClick={() => navigate("/")}>
-                <img className="w-5 h-5" src={home} alt="home" />
+                <House className="w-5 h-5 text-gray-500 hover:text-gray-700" />
             </button>
 
-            <button
+            <ChevronLeft
                 onClick={goPrev}
-                disabled={currentIndex === 0}
-                className="disabled:opacity-40 text-bold text-xl text-gray-800"
-            >
-                &lt;
-            </button>
+                className="cursor-pointer text-gray-400 hover:text-gray-600" />
 
-            <span>{currentPage} of {totalPages}</span>
+            <span className="text-gray-500">
+                {currentPage} of {totalPages}
+            </span>
 
-            <button
+            <ChevronRight
                 onClick={goNext}
-                disabled={currentIndex === totalPages - 1}
-                className="disabled:opacity-40 text-bold text-xl text-gray-800"
-            >
-                &gt;
-            </button>
+                className="cursor-pointer text-gray-400 hover:text-gray-600" />
         </div>
     );
 };
